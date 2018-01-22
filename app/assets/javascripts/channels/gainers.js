@@ -1,4 +1,4 @@
-App.cable.subscriptions.create('MarketChannel', {
+App.gainers = App.cable.subscriptions.create('MarketChannel', {
   received: function(data) {
     let responseFromChannel = data;
 

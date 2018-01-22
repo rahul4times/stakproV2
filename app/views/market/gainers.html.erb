@@ -1,7 +1,12 @@
 <h1>Top Gainers</h1>
 <div id="gainer">
 
+
 </div>
+<div>
+  <%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>
+</div>
+
 <script type="text/javascript">
     // calls action cable route
 
@@ -10,7 +15,5 @@
         console.log("I am live!!!");
       });
     }, 3000);
-
-
 
 </script>
