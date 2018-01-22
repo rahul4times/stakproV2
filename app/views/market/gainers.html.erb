@@ -1,0 +1,16 @@
+<h1>Top Gainers</h1>
+<div id="gainer">
+
+</div>
+<script type="text/javascript">
+    // calls action cable route
+
+    setInterval(() => {
+      fetch('/get_gainers').then(() => {
+        console.log("I am live!!!");
+      });
+    }, 3000);
+
+
+
+</script>
