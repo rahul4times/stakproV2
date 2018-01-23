@@ -3,7 +3,7 @@ App.gainers = App.cable.subscriptions.create('MarketChannel', {
     let responseFromChannel = data;
 
 
-    console.log("Here: ", responseFromChannel.top_gainers);
+    console.log("Data from API: ", responseFromChannel.top_gainers);
 
     return document.getElementById('gainer').innerHTML = this.renderGainers(responseFromChannel);
 

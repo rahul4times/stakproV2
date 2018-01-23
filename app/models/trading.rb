@@ -1,18 +1,25 @@
-class MarketController < ApplicationController
+require 'singleton'
+require 'net/http'
+require 'json'
+require 'open-uri'
 
-  def gainers
-    # this method's job is to just display page
+class Trading
+  include Singleton
+
+  def initialize()
+
   end
 
-  def get_gainers
-    puts "this is firing"
+  def publish
     response = open('https://api.iextrading.com/1.0/stock/aapl/quote').read
 
+
+
+    sample_data = {"company": "AAPL", "size": "medium"}
     # Broadcasting data received from api call above to market channel
     # Function broadcast, [channel name], [data in json form], [status code]
     ActionCable.server.broadcast 'market_channel',
       top_gainers: JSON.parse(response)
 
   end
-  
 end

@@ -1,19 +1,23 @@
 <h1>Top Gainers</h1>
-<div id="gainer">
 
 
-</div>
-<div>
-  <%= react_component("HelloWorld", props: @hello_world_props, prerender: false) %>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>stakPro V2</title>
+  </head>
+  <body>
+    <div id="gainer">
 
-<script type="text/javascript">
-    // calls action cable route
 
-    setInterval(() => {
-      fetch('/get_gainers').then(() => {
-        console.log("I am live!!!");
-      });
-    }, 3000);
-
-</script>
+    </div>
+    <script type="text/javascript">
+        setInterval(() => {
+          fetch('/get_gainers').then(() => {
+            console.log("I am live!!!");
+          });
+        }, 3000);
+    </script>
+  </body>
+</html>
